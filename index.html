@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praise the Beal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #1a0f0a;     /* Dark brown from your screenshot */
+            --card-bg: #2d1b14;      /* Lighter brown for the box */
+            --accent: #d97d6d;       /* The coral/pink color from the buttons */
+            --text: #f3e5ab;         /* Creamy text color */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .header-card {
+            background-color: var(--card-bg);
+            border: 1px solid #634335; /* Subtle gold/brown border */
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+        }
+
+        /* Decorative corner images if you have them */
+        .corner { position: absolute; width: 40px; height: 40px; opacity: 0.8; }
+        .tl { top: 5px; left: 5px; } .tr { top: 5px; right: 5px; }
+        .bl { bottom: 5px; left: 5px; } .br { bottom: 5px; right: 5px; }
+
+        .logo {
+            width: 150px; /* Adjust based on your 512px logo */
+            margin-bottom: 20px;
+        }
+
+        .social-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            background-color: var(--accent);
+            color: white;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: transform 0.2s, background 0.2s;
+            border: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            background-color: #e58d7e;
+        }
+
+        /* Discord Popup Tooltip */
+        .discord-popup {
+            visibility: hidden;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 5px 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-size: 14px;
+        }
+
+        .show { visibility: visible; animation: fadeIn 0.3s; }
+
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    </style>
+</head>
+<body>
+
+    <div class="header-card">
+        <img src="1.png" class="corner tl">
+        <img src="2.png" class="corner tr">
+        <img src="3.png" class="corner bl">
+        <img src="4.png" class="corner br">
+
+        <img src="images/site/etherionlogo.png" alt="Logo" class="logo">
+        
+        <div class="social-container">
+            <a href="https://twitter.com/YOUR_HANDLE" class="social-btn"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/@YOUR_CHANNEL" class="social-btn"><i class="fab fa-youtube"></i></a>
+            <a href="https://ko-fi.com/YOUR_PAGE" class="social-btn"><i class="fas fa-coffee"></i></a>
+            <a href="https://YOURNAME.itch.io" class="social-btn"><i class="fab fa-itch-io"></i></a>
+            <a href="https://steamcommunity.com/id/YOUR_ID" class="social-btn"><i class="fab fa-steam"></i></a>
+            
+            <button class="social-btn" onclick="toggleDiscord()">
+                <i class="fab fa-discord"></i>
+                <span class="discord-popup" id="discordName">YourTag#0000</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function toggleDiscord() {
+            var popup = document.getElementById("discordName");
+            popup.classList.toggle("show");
+            
+            // Optional: Copy to clipboard
+            navigator.clipboard.writeText("YourTag#0000");
+            
+            // Auto-hide after 3 seconds
+            setTimeout(function(){ popup.classList.remove("show"); }, 3000);
+        }
+    </script>
+
+</body>
+</html>
