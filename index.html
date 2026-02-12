@@ -96,6 +96,41 @@
         .show { visibility: visible; animation: fadeIn 0.3s; }
 
         @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+        .featured-btn {
+            
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Space between icon and text */
+    
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    
+    margin: 30px auto; /* Centers the button and adds space above it */
+    padding: 12px 25px;
+    width: fit-content;
+    
+    border-radius: 50px; /* Makes it pill-shaped/rounded */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.featured-btn:hover {
+    transform: scale(1.05);
+    background-color: #e58d7e;
+}
+
+.btn-icon {
+    width: 30px;  /* Resizes your 1200px icon automatically */
+    height: 30px;
+    border-radius: 50%; /* Optional: makes the icon circular */
+    object-fit: cover;
+}
     </style>
 </head>
 <body>
@@ -120,6 +155,11 @@
                 <span class="discord-popup" id="discordName">Etherionstudio</span>
             </button>
         </div>
+        
+    <a href="https://holyservant.eu/" class="featured-btn">
+    <img src="images/site/logo.png" alt="Icon" class="btn-icon">
+    <span>Featured Project</span>
+    </a>
     </div>
 
     <script>
